@@ -1,0 +1,42 @@
+{
+  "businessName": "Eriife Spiritual Materials Store",
+  "industry": "Spiritual Materials & Traditional Services",
+  "tone": "respectful, traditional, authentic",
+  "tagline": "Your Trusted Source for Authentic Spiritual Materials in Ido-Ekiti",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "copy": "Welcome to Eriife Spiritual Materials Store - your trusted partner for genuine spiritual materials and traditional items in Ekiti State. Located in the heart of Ido-Ekiti, we provide authentic materials for spiritual practitioners, traditional worshippers, and cultural enthusiasts across Nigeria.",
+      "imagePrompt": "Warm, welcoming interior of a traditional Nigerian spiritual materials shop in Ekiti State, wooden shelves displaying carefully arranged spiritual items, traditional cloths in earth tones, soft natural lighting through window, cultural artifacts, professional yet mystical atmosphere, photorealistic, high quality",
+      "layout": "centered"
+    },
+    {
+      "id": "about",
+      "name": "About Us",
+      "copy": "Eriife Spiritual Materials Store has served the Ido-Ekiti community and beyond with integrity and authenticity. We understand the sacred nature of spiritual practice and the importance of genuine materials in traditional worship and rituals. Our store is a haven for those seeking quality spiritual items, from traditional beads and fabrics to ritual materials and cultural artifacts. We respect all spiritual paths and serve our customers with discretion, knowledge, and dedication to preserving our rich cultural heritage.",
+      "imagePrompt": "Respectful close-up of traditional Nigerian spiritual materials - colorful beads, white cloths, traditional vessels, cowrie shells arranged on wooden surface, natural daylight, authentic Yoruba cultural elements, warm earth tones, detailed texture, photorealistic, culturally sensitive presentation",
+      "layout": "split"
+    },
+    {
+      "id": "services",
+      "name": "Our Products & Services",
+      "copy": "We offer a comprehensive range of authentic spiritual materials:\n\n**Traditional Beads & Ornaments** - Genuine waist beads, spiritual jewelry, and traditional adornments for various spiritual purposes\n\n**Spiritual Fabrics & Cloths** - White cloths, aso oke, traditional wrappers, and ritual fabrics in various colors and patterns\n\n**Ritual Materials** - Authentic materials for traditional worship, offerings, and spiritual ceremonies\n\n**Cultural Artifacts** - Traditional vessels, calabashes, cultural implements, and decorative items\n\n**Consultation Services** - Guidance on appropriate materials for specific spiritual practices and traditional ceremonies\n\n**Custom Orders** - Special requests for specific items sourced with care and authenticity\n\nAll our materials are carefully selected and verified for authenticity. We maintain the highest standards of quality and respect for traditional practices.",
+      "imagePrompt": "Grid display of diverse spiritual materials in a Nigerian shop - colorful traditional beads in bowls, white ritual cloths folded neatly, brass vessels, calabashes, cowrie shells, traditional amulets, organized on wooden shelving, warm indoor lighting, authentic African spiritual aesthetic, photorealistic detail",
+      "layout": "cards"
+    },
+    {
+      "id": "contact",
+      "name": "Visit Our Store",
+      "copy": "Eriife Spiritual Materials Store is conveniently located in Ido-Ekiti, Ekiti State, serving customers throughout the region. Visit us for personalized service and genuine spiritual materials.\n\n**Store Location:**\nNO 52 ILORO STREET\nIDO EKITI\nEKITI STATE\n\n**Contact Us:**\nPhone: 08132106676\n\nWe welcome walk-in customers and are happy to assist with your spiritual material needs. For inquiries about specific items or custom orders, please call ahead. We treat all consultations with confidentiality and respect.\n\n**Opening Hours:**\nMonday - Saturday: 9:00 AM - 6:00 PM\nSunday: By Appointment\n\nClick below to reach us directly on WhatsApp for quick inquiries.",
+      "imagePrompt": "Street view of a traditional Nigerian shop storefront in Ekiti State, modest building with signage, Iloro Street setting, local neighborhood atmosphere, green surroundings typical of Ekiti, daytime natural lighting, welcoming entrance, photorealistic Nigerian small business aesthetic",
+      "layout": "centered"
+    }
+  ],
+  "contact": {
+    "phone": "08132106676",
+    "email": "",
+    "address": "NO 52 ILORO STREET, IDO EKITI, EKITI STATE",
+    "whatsapp": "https://wa.me/2348132106676"
+  }
+}
