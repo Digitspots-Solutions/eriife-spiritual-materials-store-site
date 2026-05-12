@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eriife Spiritual Materials Store - Authentic Spiritual Materials in Ido-Ekiti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #05101a;
+            --color-accent: #0597d6;
+            --color-bg: #F0F6FC;
+            --color-text: #081828;
+            --color-surface: #0f1728;
+            --color-secondary-accent: #f25907;
+            --font-display: 'Rajdhani', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+            --border-radius: 6px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(240, 246, 252, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 5%;
+            box-shadow: 4px 4px 0 rgba(5, 16, 26, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-text);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--color-bg);
+            box-shadow: -4px 4px 12px rgba(5, 16, 26, 0.15);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--color-accent);
+        }
+
+        section {
+            padding: 80px 5%;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        #hero {
+            animation-delay: 0s;
+        }
+
+        #about {
+            animation-delay: 0.1s;
+        }
+
+        #services {
+            animation-delay: 0.2s;
+        }
+
+        #contact {
+            animation-delay: 0.3s;
+        }
+
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--color-accent);
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0 var(--color-secondary-accent);
+        }
+
+        .cta-button:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--color-secondary-accent);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .about-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: 6px 6px 0 var(--color-surface);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 4px 4px 0 var(--color-surface);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--color-surface);
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: 4px 4px 0 var(--color-surface);
+            margin-top: 2rem;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .contact-info strong {
+            color: var(--color-primary);
+            font-weight: 600;
+            display: block;
+            margin-top: 1.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link.phone {
+            background: var(--color-accent);
+            color: white;
+            box-shadow: 4px 4px 0 var(--color-surface);
+        }
+
+        .contact-link.phone:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--color-surface);
+        }
+
+        .contact-link.whatsapp {
+            background: #25D366;
+            color: white;
+            box-shadow: 4px 4px 0 var(--color-surface);
+        }
+
+        .contact-link.whatsapp:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 var(--color-surface);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: var(--color-surface);
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            section {
+                padding: 48px 5%;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-split {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .about-split {
+                gap: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Eriife Spiritual Materials</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Products</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-bg">
+            <img src="https://images.pexels.com/photos/9056673/pexels-photo-9056673.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Eriife Spiritual Materials Store">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Eriife Spiritual Materials Store</h1>
+            <p>Your Trusted Source for Authentic Spiritual Materials in Ido-Ekiti</p>
+            <p>Welcome to Eriife Spiritual Materials Store - your trusted partner for genuine spiritual materials and traditional items in Ekiti State. Located in the heart of Ido-Ekiti, we provide authentic materials for spiritual practitioners, traditional worshippers, and cultural enthusiasts across Nigeria.</p>
+            <a href="#contact" class="cta-button">Visit Our Store</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-split">
+                <img src="https://images.pexels.com/photos/36010086/pexels-photo-36010086.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Authentic Spiritual Materials" class="about-image">
+                <div class="about-text">
+                    <p>Eriife Spiritual Materials Store has served the Ido-Ekiti community and beyond with integrity and authenticity. We understand the sacred nature of spiritual practice and the importance of genuine materials in traditional worship and rituals. Our store is a haven for those seeking quality spiritual items, from traditional beads and fabrics to ritual materials and cultural artifacts. We respect all spiritual paths and serve our customers with discretion, knowledge, and dedication to preserving our rich cultural heritage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Products & Services</h2>
+            <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem; font-size: 1.1rem;">We offer a comprehensive range of authentic spiritual materials</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Traditional Beads & Ornaments</h3>
+                    <p>Genuine waist beads, spiritual jewelry, and traditional adornments for various spiritual purposes</p>
+                </div>
+                <div class="service-card">
+                    <h3>Spiritual Fabrics & Cloths</h3>
+                    <p>White cloths, aso oke, traditional wrappers, and ritual fabrics in various colors and patterns</p>
+                </div>
+                <div class="service-card">
+                    <h3>Ritual Materials</h3>
+                    <p>Authentic materials for traditional worship, offerings, and spiritual ceremonies</p>
+                </div>
+                <div class="service-card">
+                    <h3>Cultural Artifacts</h3>
+                    <p>Traditional vessels, calabashes, cultural implements, and decorative items</p>
+                </div>
+                <div class="service-card">
+                    <h3>Consultation Services</h3>
+                    <p>Guidance on appropriate materials for specific spiritual practices and traditional ceremonies</p>
+                </div>
+                <div class="service-card">
+                    <h3>Custom Orders</h3>
+                    <p>Special requests for specific items sourced with care and authenticity</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 3rem; font-size: 1.1rem; max-width: 900px; margin-left: auto; margin-right: auto;">All our materials are carefully selected and verified for authenticity. We maintain the highest standards of quality and respect for traditional practices.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Visit Our Store</h2>
+            <div class="contact-content">
+                <p>Eriife Spiritual Materials Store is conveniently located in Ido-Ekiti, Ekiti State, serving customers throughout the region. Visit us for personalized service and genuine spiritual materials.</p>
+                <div class="contact-info">
+                    <strong>Store Location:</strong>
+                    <p>NO 52 ILORO STREET<br>IDO EKITI<br>EKITI STATE</p>
+                    
+                    <strong>Contact Us:</strong>
+                    <p>Phone: 08132106676</p>
+                    
+                    <p>We welcome walk-in customers and are happy to assist with your spiritual material needs. For inquiries about specific items or custom orders, please call ahead. We treat all consultations with confidentiality and respect.</p>
+                    
+                    <strong>Opening Hours:</strong>
+                    <p>Monday - Saturday: 9:00 AM - 6:00 PM<br>Sunday: By Appointment</p>
+                    
+                    <p>Click below to reach us directly on WhatsApp for quick inquiries.</p>
+                    
+                    <div class="contact-links">
+                        <a href="tel:08132106676" class="contact-link phone">Call Us</a>
+                        <a href="https://wa.me/2348132106676" target="_blank" class="contact-link whatsapp">WhatsApp Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Eriife Spiritual Materials Store. All rights reserved.</p>
+    </footer>
+
+    <a href="https://wa.me/2348132106676" target="_blank" class="whatsapp-float" aria-label="Contact us on WhatsApp">💬</a>
+
+    <script>
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
